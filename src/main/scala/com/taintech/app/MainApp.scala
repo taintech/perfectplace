@@ -9,7 +9,7 @@ object MainApp extends App {
 
   System.setProperty("webdriver.chrome.driver", "/Users/rtainov/IdeaProjects/perfectplace/chromedriver")
 
-  def iteratePages(): Unit ={
+  def iteratePages(): Unit = {
     val driver = new ChromeDriver()
     driver.get(dubizzle)
     println(driver.getTitle)
@@ -17,7 +17,8 @@ object MainApp extends App {
       Thread.sleep(5000)
       driver
         .findElementByCssSelector(
-          s"div.is-flex.listings-container > div.algolia-page-content.is-flex > div.hits-panel-container > div.pagination-container > ul > li:nth-child($i)")
+          s"div.is-flex.listings-container > div.algolia-page-content.is-flex > div.hits-panel-container > div.pagination-container > ul > li:nth-child($i)"
+        )
         .click()
     }
     //  driver.quit()
